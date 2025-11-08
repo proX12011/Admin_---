@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>لوحة التحكم - سنتر الأطباء التعليمي</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="script.js" defer></script>
+</head>
+<body>
+<header>
+  <h1>🩺 لوحة التحكم - سنتر الأطباء التعليمي</h1>
+  <nav>
+    <button id="tabTeachers">👨‍🏫 المعلمين</button>
+    <button id="tabPosts">📢 المنشورات</button>
+  </nav>
+</header>
+
+<main>
+  <!-- قسم المعلمين والإعدادات -->
+  <section id="teachersSection">
+    <!-- شعار -->
+    <div class="logo-section">
+      <h2>🔰 شعار الموقع</h2>
+      <input type="text" id="logoUrl" placeholder="أدخل رابط صورة الشعار">
+      <button id="saveLogo">💾 حفظ الشعار</button>
+    </div>
+
+    <!-- معلومات الموقع -->
+    <div class="site-info">
+      <h2>📍 معلومات الموقع</h2>
+      <input type="text" id="siteName" placeholder="اسم الموقع (اختياري)">
+      <input type="text" id="siteLocation" placeholder="الموقع الجغرافي">
+      <button id="saveSiteInfo">💾 حفظ المعلومات</button>
+    </div>
+
+    <!-- روابط التواصل الاجتماعي -->
+    <div class="socials-section">
+      <h2>🔗 روابط التواصل الاجتماعي</h2>
+      <input type="text" id="socialName" placeholder="اسم المنصة">
+      <input type="text" id="socialImage" placeholder="رابط شعار المنصة">
+      <input type="text" id="socialLink" placeholder="رابط الصفحة">
+      <button id="addSocial">➕ إضافة الرابط</button>
+      <div id="socialList"></div>
+    </div>
+
+    <!-- إضافة معلم -->
+    <div class="add-teacher">
+      <h2>➕ إضافة معلم</h2>
+      <input type="text" id="name" placeholder="اسم المعلم">
+      <input type="text" id="subject" placeholder="المادة">
+      <input type="text" id="grade" placeholder="المرحلة الدراسية">
+      <input type="text" id="image" placeholder="رابط الصورة">
+      <input type="number" id="rating" placeholder="التقييم (1 - 5)">
+      <button id="addTeacher">💾 إضافة المعلم</button>
+    </div>
+
+    <!-- قائمة المعلمين -->
+    <div class="teachers-list">
+      <h2>📋 قائمة المعلمين</h2>
+      <div id="teachers"></div>
+    </div>
+  </section>
+
+  <!-- قسم المنشورات -->
+  <section id="postsSection" style="display:none;">
+    <form id="postForm" class="card">
+      <label>📘 عنوان المنشور:</label>
+      <input type="text" id="title" required>
+
+      <label>👨‍🏫 رقم المعلم (ID):</label>
+      <input type="text" id="teacherId" required>
+
+      <label>📝 نص المنشور:</label>
+      <textarea id="content" rows="3"></textarea>
+
+      <label>🎞️ نوع الملف:</label>
+      <select id="type" required>
+        <option value="">اختر نوع الملف</option>
+        <option value="image">📷 صورة</option>
+        <option value="video">🎬 فيديو</option>
+        <option value="pdf">📄 PDF</option>
+        <option value="text">📝 نص فقط</option>
+      </select>
+
+      <label>🔗 رابط الملف:</label>
+      <input type="url" id="fileUrl">
+
+      <button type="submit">➕ إضافة المنشور</button>
+    </form>
+
+    <div id="statusMsg"></div>
+    <hr style="margin: 40px 0; border: 1px solid #FFD700">
+    <h2 style="color:#FFD700">📋 جميع المنشورات</h2>
+    <div id="postsList"></div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 سنتر الأطباء التعليمي</p>
+</footer>
+</body>
+</html>
